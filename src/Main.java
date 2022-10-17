@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bienvenidos a la Clase #11");
+        System.out.println("Da vinci Tournament");
         Season torneoDaVinci = new Season();   //creamos torneo
         Match primerParcial = new Match();     // creamos partido
         Date fechaPosibleParcial = new Date(); //creamos fecha
