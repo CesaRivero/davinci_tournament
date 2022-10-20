@@ -27,6 +27,10 @@ public class TeamSeason extends Team {private int position;
     }
     TeamSeason(String name){
         this.setName(name);
+    }
+    TeamSeason(String name, int position){
+        this.setName(name);
+        this.setPosition(position);
 
     }
 }

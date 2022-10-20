@@ -9,17 +9,14 @@ public class Main {
 
         Match primerParcial = new Match(lugarDelParcial,fechaPosibleParcial );// creamos partido
 
-        TeamSeason profesoresPOO = new TeamSeason("Profes POO");
-        TeamSeason estudiantesFC = new TeamSeason("Estudiantes FC");
+        TeamSeason profesoresPOO = new TeamSeason("Profes POO",1);
+        TeamSeason estudiantesFC = new TeamSeason("Estudiantes FC",0);
         TeamSeason recursantesFC = new TeamSeason("Recursantes FC");
         Player profeSergio=new Player("Sergio Medina",1,"Goalkeeper");
         Player profeSuplente=new Player("Benito Camela",13,"Goalkeeper");
 
-        profesoresPOO.setPosition(1);
-        estudiantesFC.setPosition(0);
-
-
-        // hay que terminar de definir los equipos
+      /*  profesoresPOO.setPosition(1);
+        estudiantesFC.setPosition(0); agregue a constructor*/
 
         primerParcial.setLocalTeam(profesoresPOO);
         primerParcial.setVisitantTeam(estudiantesFC);
