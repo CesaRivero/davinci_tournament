@@ -20,4 +20,51 @@ public class Player {
         this.position = position;
         return;
     }
+    Player(){
+
+    }
+
+    Player(String name){
+        this.setName(name);
+        this.setGoalCounter(0);
+        this.setMatchCounter(0);
+
+    }
+
+    Player(String name, int number,String position){
+        this.setName(name);
+        this.setGoalCounter(0);
+        this.setMatchCounter(0);
+        this.setNumber(number);
+        this.setPosition(position);
+
+    }
+
+    public void setGoalCounter(int goalCounter) {
+        this.goalCounter = goalCounter;
+    }
+
+    public int getGoalCounter() {
+        return goalCounter;
+    }
+
+    public int getMatchCounter() {
+        return matchCounter;
+    }
+
+    public void setMatchCounter(int matchCounter) {
+        this.matchCounter = matchCounter;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 }
