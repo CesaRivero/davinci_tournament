@@ -8,7 +8,8 @@ public class TeamSeason extends Team {private int position;
         return this.players;
     }
     public void addPlayer(Player player){
-        //this.players;
+        this.players.add(player);
+        player.setTeam(this);
         return;
     }
 
@@ -22,15 +23,23 @@ public class TeamSeason extends Team {private int position;
     }
 
     TeamSeason(){
+        this.setPlayers(new ArrayList<Player>());
 
 
     }
     TeamSeason(String name){
+        this.setPlayers(new ArrayList<Player>());
         this.setName(name);
     }
+
     TeamSeason(String name, int position){
         this.setName(name);
         this.setPosition(position);
+        this.setPlayers(new ArrayList<Player>());
 
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
     }
 }
