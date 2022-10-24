@@ -34,6 +34,14 @@ public class Match {
         this.setVisitantTeam(visitantTeam);
 
     }
+    public String generateMarker(){
+        return String.format("%s (%d) - (%d) %s",
+        this.getLocalTeam().getName(),
+                this.getMarkerLocal(),
+                this.getMarkerVisitant(),
+                this.getVisitantTeam().getName()
+    );
+    }
 
     public void setDate(Date newDate){
         this.date = newDate;
@@ -73,5 +81,13 @@ public class Match {
 
     public String getResult(){
         return "";
+    }
+
+    public TeamSeason getLocalTeam() {
+        return localTeam;
+    }
+
+    public TeamSeason getVisitantTeam() {
+        return visitantTeam;
     }
 }

@@ -48,5 +48,7 @@ public class Main {
        /* primerParcial.setLocalTeam(profesoresPOO);
         primerParcial.setVisitantTeam(estudiantesFC); agregamos como constructor */
 
+        System.out.println(primerParcial.generateMarker());
+
     }
 }
