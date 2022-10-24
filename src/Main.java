@@ -7,11 +7,12 @@ public class Main {
         Season torneoDaVinci = new Season();   //creamos torneo
         Date fechaPosibleParcial = new Date(2022,8,29); //creamos fecha
 
-        Match primerParcial = new Match(lugarDelParcial,fechaPosibleParcial );// creamos partido
 
         TeamSeason profesoresPOO = new TeamSeason("Profes POO",1);
         TeamSeason estudiantesFC = new TeamSeason("Estudiantes FC",0);
         TeamSeason recursantesFC = new TeamSeason("Recursantes FC");
+
+        Match primerParcial = new Match(lugarDelParcial,fechaPosibleParcial ,profesoresPOO,estudiantesFC);// creamos partido
 
         //creamos jugadores equipo 1
         Player profeSergio=new Player("Sergio Medina",1,"Goalkeeper");
@@ -44,8 +45,8 @@ public class Main {
       /*  profesoresPOO.setPosition(1);
         estudiantesFC.setPosition(0); agregue a constructor*/
 
-        primerParcial.setLocalTeam(profesoresPOO);
-        primerParcial.setVisitantTeam(estudiantesFC);
+       /* primerParcial.setLocalTeam(profesoresPOO);
+        primerParcial.setVisitantTeam(estudiantesFC); agregamos como constructor */
 
     }
 }
