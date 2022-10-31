@@ -48,9 +48,9 @@ public class Main {
        /* primerParcial.setLocalTeam(profesoresPOO);
         primerParcial.setVisitantTeam(estudiantesFC); agregamos como constructor */
 
-        primerParcial.makeLocalGoal(profesoresPOO.getPlayers().get(0));
-        primerParcial.makeLocalGoal(profesoresPOO.getPlayers().get(0));
-        primerParcial.makeVisitantGoal(estudiantesFC.getPlayers().get(0));
+        primerParcial.makeLocalGoal(0);
+        primerParcial.makeLocalGoal(4);
+        primerParcial.makeVisitantGoal(1);
 
         System.out.println(primerParcial.generateMarker());
 
