@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Match {
+    private Date creation;
     private Date date;
     private TeamSeason localTeam;
     private TeamSeason visitantTeam;
@@ -10,11 +11,13 @@ public class Match {
     private int markerVisitant;
 
     Match(){
+        this.creation=new Date();
         this.setMarkerLocal(0);
         this.setMarkerVisitant(0);
 
     }
     Match(String location, Date date){
+        this.creation=new Date();
         this.setMarkerLocal(0);
         this.setMarkerVisitant(0);
 
@@ -24,6 +27,7 @@ public class Match {
     }
 
     Match(String location, Date date, TeamSeason localTeam, TeamSeason visitantTeam){
+        this.creation=new Date();
         this.setMarkerLocal(0);
         this.setMarkerVisitant(0);
 
@@ -89,5 +93,9 @@ public class Match {
 
     public TeamSeason getVisitantTeam() {
         return visitantTeam;
+    }
+
+    public Date getCreation() {
+        return creation;
     }
 }
