@@ -70,6 +70,26 @@ public class Match {
         return;
     }
 
+    private void makeGoal(TeamSeason team, Player player){
+        if (team.getName()!=this.localTeam.getName()&&
+                team.getName()!=this.visitantTeam.getName()) return;
+
+
+
+    }
+    public void makeLocalGoal( Player player){
+        int marker=this.getMarkerLocal();
+        marker++;
+        this.makeGoal(this.localTeam, player);
+        this.setMarkerLocal(marker);
+    }
+    public void makeVisitantGoal (Player player){
+        int marker=this.getMarkerVisitant();
+        marker++;
+        this.makeGoal(this.visitantTeam,player);
+        this.setMarkerVisitant(marker);
+    }
+
     public int getMarkerLocal(){
         return this.markerLocal;
     }
