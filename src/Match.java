@@ -74,6 +74,7 @@ public class Match {
         if (team.getName()!=this.localTeam.getName()&&
                 team.getName()!=this.visitantTeam.getName()) return;
         player.setGoalCounter(player.getGoalCounter()+1);
+        player.getName();
 
 
 
@@ -89,6 +90,7 @@ public class Match {
         int marker=this.getMarkerVisitant();
         Player player= this.visitantTeam.getPlayers().get(position);
         marker++;
+
         this.makeGoal(this.visitantTeam,player);
         this.setMarkerVisitant(marker);
     }
