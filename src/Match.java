@@ -69,7 +69,7 @@ public class Match {
         this.markerLocal=markerLocal;
         return;
     }
-
+    // makeGoal:: (TeamSeason, Player) -> void
     private void makeGoal(TeamSeason team, Player player){
         if (team.getName()!=this.localTeam.getName()&&
                 team.getName()!=this.visitantTeam.getName()) return;
@@ -79,12 +79,14 @@ public class Match {
 
 
     }
+
+    // makeLocalGoal:: (TeamSeason, Player) -> void
     public void makeLocalGoal(int position) {
         int marker=this.getMarkerLocal();
         Player player= this.localTeam.getPlayers().get(position);
         marker++;
-        this.makeGoal(this.localTeam, player);
         this.setMarkerLocal(marker);
+        this.makeGoal(this.localTeam, player);
     }
     public void makeVisitantGoal (int position){
         int marker=this.getMarkerVisitant();
