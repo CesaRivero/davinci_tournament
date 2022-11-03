@@ -7,46 +7,34 @@ public class Match {
     private TeamSeason localTeam;
     private TeamSeason visitantTeam;
     private String location;
-    private int markerLocal;
-    private int markerVisitant;
+    private MatchResult result;
 
     Match(){
         this.creation=new Date();
-        this.setMarkerLocal(0);
-        this.setMarkerVisitant(0);
-
+        this.result=new MatchResult();
     }
     Match(String location, Date date){
         this.creation=new Date();
-        this.setMarkerLocal(0);
-        this.setMarkerVisitant(0);
-
         this.setLocation(location);
         this.setDate(date); //asigne fecha
+        this.result=new MatchResult();
 
     }
-
     Match(String location, Date date, TeamSeason localTeam, TeamSeason visitantTeam){
         this.creation=new Date();
-        this.setMarkerLocal(0);
-        this.setMarkerVisitant(0);
-
         this.setLocation(location);
         this.setDate(date);
-
         this.setLocalTeam(localTeam);
         this.setVisitantTeam(visitantTeam);
-
+        this.result=new MatchResult();
     }
     public String generateMarker(){
-        return String.format("%s (%d) - (%d) %s",
+        return String.format("%s %s %s",
         this.getLocalTeam().getName(),
-                this.getMarkerLocal(),
-                this.getMarkerVisitant(),
+                this.result.generateMarker(),
                 this.getVisitantTeam().getName()
     );
     }
-
     public void setDate(Date newDate){
         this.date = newDate;
         return;
@@ -65,63 +53,33 @@ public class Match {
         return;
     }
 
-    public void setMarkerLocal(int markerLocal){
-        this.markerLocal=markerLocal;
-        return;
-    }
     // makeGoal:: (TeamSeason, Player) -> void
     private void makeGoal(TeamSeason team, Player player){
         if (team.getName()!=this.localTeam.getName()&&
                 team.getName()!=this.visitantTeam.getName()) return;
         player.setGoalCounter(player.getGoalCounter()+1);
         player.getName();
-
-
-
     }
-
     // makeLocalGoal:: (TeamSeason, Player) -> void
     public void makeLocalGoal(int position) {
-        int marker=this.getMarkerLocal();
         Player player= this.localTeam.getPlayers().get(position);
-        marker++;
-        this.setMarkerLocal(marker);
         this.makeGoal(this.localTeam, player);
+        this.result.incrementMarkerLocal();
     }
     public void makeVisitantGoal (int position){
-        int marker=this.getMarkerVisitant();
         Player player= this.visitantTeam.getPlayers().get(position);
-        marker++;
-
         this.makeGoal(this.visitantTeam,player);
-        this.setMarkerVisitant(marker);
+        this.result.incrementMarkerVisitant();
     }
-
-    public int getMarkerLocal(){
-        return this.markerLocal;
-    }
-
-    public void setMarkerVisitant(int markerVisitant){
-        this.markerVisitant=markerVisitant;
-        return ;
-    }
-
-    public int getMarkerVisitant(){
-        return this.markerVisitant;
-    }
-
     public String getResult(){
         return "";
     }
-
     public TeamSeason getLocalTeam() {
         return localTeam;
     }
-
     public TeamSeason getVisitantTeam() {
         return visitantTeam;
     }
-
     public Date getCreation() {
         return creation;
     }

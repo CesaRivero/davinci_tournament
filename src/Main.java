@@ -51,6 +51,7 @@ public class Main {
         primerParcial.makeLocalGoal(0);
         primerParcial.makeLocalGoal(4);
         primerParcial.makeVisitantGoal(1);
+        primerParcial.makeVisitantGoal(4);
 
         System.out.println(primerParcial.generateMarker());
 
